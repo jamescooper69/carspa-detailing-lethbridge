@@ -1367,3 +1367,90 @@ details[open] .faq-icon {
   .cta-banner-btns { flex-direction: column; align-items: center; }
   .booking-form-body { padding: 20px; }
 }
+
+.services-grid,
+.steps-grid,
+.why-grid,
+.areas-grid,
+.testimonials-grid,
+.pricing-grid,
+.values-grid,
+.included-grid,
+.gallery-grid,
+.stats-grid,
+.mid-cta-grid,
+.contact-strip,
+.addons-grid {
+  overflow: hidden;
+}
+ 
+/* The .section wrapper itself is the most common offender
+   since almost every [data-aos] element sits inside one. */
+.section {
+  overflow: hidden;
+}
+ 
+/* Hero and page-header already use overflow:hidden in your
+   CSS — no change needed there. Footer needs the same
+   treatment since footer columns can carry data-aos too. */
+.footer {
+  overflow: hidden;
+}
+
+/* ============================================================
+   FIX v2 — AOS SCROLLBAR FLICKER, REMAINING SECTIONS
+   Add this block AFTER the v1 fix you already pasted in.
+   Do not delete the v1 block — this only adds what was missed.
+   ============================================================ */
+ 
+/* FAQ section was completely missing from the first pass */
+.faq-list,
+.faq-item {
+  overflow: hidden;
+}
+ 
+/* The dark "Why Choose Us" column inside mid-cta needs its
+   own clip — the parent .mid-cta-grid clip doesn't reliably
+   contain a nested column's independent transform overflow */
+.mid-cta-left,
+.mid-cta-right {
+  overflow: hidden;
+}
+
+.mid-cta-grid {
+  overflow: hidden;
+}
+ 
+/* Same logic applied defensively to every other two-column
+   split layout in the site, in case their inner halves carry
+   data-aos independently of the outer grid */
+.about-text,
+.about-img,
+.service-intro-text,
+.service-intro-img,
+.location-text {
+  overflow: hidden;
+}
+ 
+/* Sidebar cards and booking card can carry data-aos too */
+.sidebar-card,
+.booking-card,
+.booking-form-body {
+  overflow: hidden;
+}
+ 
+/* Catch-all: any section-level wrapper not already named.
+   Safe to apply broadly since none of these rely on visible
+   overflow for their visual design (no element is intended
+   to bleed outside its section boundary anywhere in this site). */
+.hero-content,
+.page-header-content,
+.cta-banner,
+.stats-bar,
+.mission-band {
+  overflow: hidden;
+}
+
+.container {
+  overflow: hidden;
+}
